@@ -32,6 +32,7 @@ The "Dependent Variable" column is removed, as the analysis is performed without
 
 ## Repository Structure
 
+```text
 analyse-encoder_SHAP/
 ├── README.md
 ├── requirements.txt
@@ -51,18 +52,21 @@ analyse-encoder_SHAP/
 └── notebooks/
     └── README.md
 
+```
+
 ## Execution
 
 Install dependencies:
 
+```bash
 pip install -r requirements.txt
 
-Run the analysis:
 
 python src/autoencoder_shap_temoin.py \
   --input data/data_deep_learning_sein.xlsx \
   --sheet "témoins" \
   --output results/top_10_combinaisons_SHAP_sein_temoins_rang.csv
+```
 
 ## Expected Interpretation
 
