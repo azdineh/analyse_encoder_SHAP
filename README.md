@@ -32,7 +32,7 @@ The "Dependent Variable" column is removed, as the analysis is performed without
 
 ## Repository Structure
 
-analyse-hajuba-github/
+analyse-encoder_SHAP/
 ├── README.md
 ├── requirements.txt
 ├── .gitignore
