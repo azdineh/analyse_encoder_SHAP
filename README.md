@@ -1,4 +1,4 @@
-# Analyse Hajiba - Autoencodeur et SHAP pour données biomédicales
+# Analyse - Autoencodeur et SHAP pour données biomédicales
 
 Ce dépôt documente une analyse exploratoire menée sur un jeu de données biomédical relatif au cancer du sein. L'étude utilise un autoencodeur pour apprendre une représentation latente des profils des individus témoins, puis SHAP pour interpréter les variables qui contribuent le plus à cette représentation.
 
