@@ -20,7 +20,7 @@ from torch.utils.data import DataLoader, TensorDataset
 
 
 # ==============================
-# 🔹 REPRODUCTIBILITÉ
+# REPRODUCTIBILITÉ
 # ==============================
 def set_seed(seed: int = 42):
     random.seed(seed)
@@ -37,7 +37,7 @@ def set_seed(seed: int = 42):
 
 
 # ==============================
-# 🔹 AUTOENCODER
+# AUTOENCODER
 # ==============================
 class Autoencoder(nn.Module):
     def __init__(self, input_dim: int):
@@ -80,7 +80,7 @@ class Autoencoder(nn.Module):
 
 
 # ==============================
-# 🔹 DATA PREPROCESSING
+# DATA PREPROCESSING
 # ==============================
 def encode_yes_no_columns(df: pd.DataFrame) -> pd.DataFrame:
     df = df.copy()
@@ -116,7 +116,7 @@ def load_and_prepare_data(input_path: Path, sheet_name: str, target_column: str)
 
 
 # ==============================
-# 🔹 TRAINING
+# TRAINING
 # ==============================
 def train_autoencoder(x_tensor, epochs, batch_size, lr, seed):
 
@@ -126,7 +126,7 @@ def train_autoencoder(x_tensor, epochs, batch_size, lr, seed):
     criterion = nn.MSELoss()
     optimizer = torch.optim.Adam(model.parameters(), lr=lr)
 
-    # 🔹 IMPORTANT: reproductibilité du DataLoader
+    # IMPORTANT: reproductibilité du DataLoader
     generator = torch.Generator()
     generator.manual_seed(seed)
 
@@ -160,7 +160,7 @@ def train_autoencoder(x_tensor, epochs, batch_size, lr, seed):
 
 
 # ==============================
-# 🔹 SHAP ANALYSIS
+# SHAP ANALYSIS
 # ==============================
 def compute_shap_interactions(model, x_tensor, feature_names, n_samples):
 
@@ -207,7 +207,7 @@ def compute_shap_interactions(model, x_tensor, feature_names, n_samples):
 
 
 # ==============================
-# 🔹 MAIN
+# MAIN
 # ==============================
 def main():
 
@@ -223,12 +223,12 @@ def main():
     parser.add_argument("--lr", default=0.01, type=float)
     parser.add_argument("--shap-samples", default=100, type=int)
 
-    # 🔹 nouveau
+    # nouveau
     parser.add_argument("--seed", default=42, type=int)
 
     args = parser.parse_args()
 
-    # 🔹 appliquer seed
+    # appliquer seed
     set_seed(args.seed)
 
     args.output.parent.mkdir(parents=True, exist_ok=True)
